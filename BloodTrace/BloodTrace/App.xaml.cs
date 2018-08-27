@@ -24,13 +24,21 @@ namespace BloodTrace
         {
             InitializeComponent();
 
-            await NavigationService.NavigateAsync("NavigationPage/MainPage");
+            await NavigationService.NavigateAsync("NavigationPage/LoginPage");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage>();
+            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<RegisterPage, RegisterPageViewModel>();
+            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>();
+            containerRegistry.RegisterForNavigation<HelpPage, HelpPageViewModel>();
+            containerRegistry.RegisterForNavigation<FindBloodGroupPage, FindBloodGroupPageViewModel>();
+            containerRegistry.RegisterForNavigation<RegisterBloodGroupPage, RegisterPageViewModel>();
+            containerRegistry.RegisterForNavigation<LatestDonars, LatestDonarsViewModel>();
+            containerRegistry.RegisterForNavigation<DonatorDetailPage, DonatorDetailPageViewModel>();
         }
     }
 }

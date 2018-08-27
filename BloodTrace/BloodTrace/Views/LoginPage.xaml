@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="BloodTrace.Views.LoginPage">
+    <StackLayout Padding="5"
+                 Margin="5">
+        <Image Source="bloodTraceLogo"
+               HeightRequest="200"/>
+        <Entry Placeholder="Email"
+               Keyboard="Email"/>
+        <Entry Placeholder="Password"
+               IsPassword="True"/>
+        <Button Text="Login" 
+                BackgroundColor="Red"
+                TextColor="White" 
+                Command="{Binding LoginCommand}"/>
+        <StackLayout Orientation="Horizontal"
+                     HorizontalOptions="Center"
+                     VerticalOptions="EndAndExpand">
+            <Label Text="Don't have an account?" />
+            <Label Text="Sign Up"
+                   TextColor="Black"
+                   FontAttributes="Bold">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Command="{}" />
+                </Label.GestureRecognizers>
+            </Label>
+            
+        </StackLayout>
+    </StackLayout>
+  
+</ContentPage>

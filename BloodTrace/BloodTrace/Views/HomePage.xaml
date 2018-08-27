@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="BloodTrace.Views.HomePage">
+    <AbsoluteLayout>
+        <BoxView BackgroundColor="#FC6C85" 
+                 AbsoluteLayout.LayoutBounds="0,0,1,0.4" AbsoluteLayout.LayoutFlags="All" />
+        <Label Text="Logout"
+               TextColor="White"
+               FontSize="Medium"
+               FontAttributes="Bold"
+               AbsoluteLayout.LayoutBounds="0.1,1" AbsoluteLayout.LayoutFlags="PositionProportional">
+            <Label.GestureRecognizers>
+                <TapGestureRecognizer Command="{Binding LogoutCommand}" />
+            </Label.GestureRecognizers>
+        </Label>
+        <Image Source="bloodTraceLogo" 
+               AbsoluteLayout.LayoutBounds="0.5,0.3, 0.5, 100" AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"   />
+        <Label Text="SERVICE WE PROVIDE"
+               TextColor="Black"
+               FontSize="Large"
+               AbsoluteLayout.LayoutBounds="0.5, 0.5" AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        
+
+        <Button AbsoluteLayout.LayoutBounds="0.2, 0.7, 100, 100" Image="search" 
+                BackgroundColor="Transparent"
+                BorderRadius="20"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Command="{Binding BloodGroupCommand}"/>
+        <Button AbsoluteLayout.LayoutBounds="0.2, 0.95, 100, 100" Image="group" 
+                BackgroundColor="Transparent"
+                BorderRadius="20"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Command="{Binding LatestDonatorsCommand}"/>
+
+
+        <Button AbsoluteLayout.LayoutBounds="0.8, 0.7, 100, 100" Image="glucometer" 
+                BackgroundColor="Transparent"
+                BorderRadius="20"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                 Command="{Binding RegisterBloodGroupCommand}"/>
+        <Button AbsoluteLayout.LayoutBounds="0.8, 0.95, 100, 100" Image="help" 
+                BackgroundColor="Transparent"
+                BorderRadius="20"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                 Command="{Binding HelpCommand}"/>
+
+
+    </AbsoluteLayout>
+  
+</ContentPage>
