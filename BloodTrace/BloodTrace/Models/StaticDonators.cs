@@ -11,7 +11,7 @@ namespace BloodTrace.Models
     {
         public static ObservableCollection<Donator> Donators { get; set; } = new ObservableCollection<Donator>()
         {
-            new Donator
+            new Donator()
             {
                 Id = 1,
                 Name = "Muhammed",
@@ -20,7 +20,7 @@ namespace BloodTrace.Models
                 BloodGroup = "A+",
                 Country = "Egypt"
             },
-            new Donator
+            new Donator()
             {
                 Id = 2,
                 Name = "John",
@@ -29,7 +29,7 @@ namespace BloodTrace.Models
                 BloodGroup = "O+",
                 Country = "USA"
             },
-            new Donator
+            new Donator()
             {
                 Id = 3,
                 Name = "Saad",

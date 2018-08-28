@@ -7,6 +7,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Xamarin.Forms;
 
 namespace BloodTrace.ViewModels
 {
@@ -35,7 +36,7 @@ namespace BloodTrace.ViewModels
             var p = new NavigationParameters();
             p.Add("1", SelectedDonator);
 
-            _navigationService.NavigateAsync(nameof(DonatorDetailPage), p);
+            _navigationService.NavigateAsync("/"+nameof(NavigationPage) + "/" + nameof(DonatorDetailPage), p);
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)

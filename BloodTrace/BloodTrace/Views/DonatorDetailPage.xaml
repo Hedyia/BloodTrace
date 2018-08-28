@@ -24,11 +24,13 @@
                 BackgroundColor="#FC6C85"
                 TextColor="White"
                 Image="phone"
+                Command="{Binding CallCommand}"
                 AbsoluteLayout.LayoutBounds="0,0.9" AbsoluteLayout.LayoutFlags="PositionProportional"/>
         <Button Text="Email"
                 BackgroundColor="#FC6C85"
                 TextColor="White"
                 Image="mail"
+                Command="{Binding EmailCommand}"
                 AbsoluteLayout.LayoutBounds="1,0.9" AbsoluteLayout.LayoutFlags="PositionProportional"/>
     </AbsoluteLayout>
   
