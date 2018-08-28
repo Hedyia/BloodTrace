@@ -2,7 +2,45 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="BloodTrace.Views.LatestDonars">
+    <StackLayout>
+        <ListView ItemsSource="{Binding Donators}"
+                  SelectedItem="{Binding SelectedDonator}"
+                  HasUnevenRows="True"
+                  SeparatorVisibility="None">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal"
+                                     Margin="5">
+                            <BoxView WidthRequest="64"
+                                     HeightRequest="64"
+                                     BackgroundColor="Black"/>
+                            <StackLayout Orientation="Vertical">
+                                <Label Text="{Binding Name}"
+                                       FontAttributes="Bold"
+                                       TextColor="Black"
+                                       FontSize="16" />
+                                <Label Text="{Binding BloodGroup}" 
+                                       VerticalOptions="CenterAndExpand"
+                                       FontSize="16" />
+                                <Label Text="{Binding Country}" 
+                                       VerticalOptions="EndAndExpand"
+                                       FontSize="16"
+                                       TextColor="BlueViolet" />
+                            </StackLayout>
+
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Behaviors>
+                <b:EventToCommandBehavior EventName="ItemTapped" 
+                                          Command="{Binding NavigateDonatorCommand}" /> 
+            </ListView.Behaviors>
+        </ListView>
+    </StackLayout>
   
 </ContentPage>

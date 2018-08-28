@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="BloodTrace.Views.DonatorDetailPage">
+             x:Class="BloodTrace.Views.DonatorDetailPage"
+             Title="{Binding Donator.Name}">
     <AbsoluteLayout>
         <BoxView AbsoluteLayout.LayoutBounds="0,0, 1,0.3" AbsoluteLayout.LayoutFlags="All"
                  BackgroundColor="#FC6C85"/>
@@ -12,12 +13,12 @@
         <StackLayout AbsoluteLayout.LayoutBounds="0,0.5" AbsoluteLayout.LayoutFlags="PositionProportional"
                      Margin="3">
             <Label Text="Blood Group" FontSize="Medium" />
-            <Label Text="B+" FontAttributes="Bold" FontSize="Medium" />
+            <Label Text="{Binding Donator.BloodGroup}" FontAttributes="Bold" FontSize="Medium" />
         </StackLayout>
         <StackLayout AbsoluteLayout.LayoutBounds="0, 0.7" AbsoluteLayout.LayoutFlags="PositionProportional"
                      Margin="3">
             <Label Text="Country" FontSize="Medium" />
-            <Label Text="England" FontAttributes="Bold" FontSize="Medium" />
+            <Label Text="{Binding Donator.Country}" FontAttributes="Bold" FontSize="Medium" />
         </StackLayout>
         <Button Text="Call"
                 BackgroundColor="#FC6C85"

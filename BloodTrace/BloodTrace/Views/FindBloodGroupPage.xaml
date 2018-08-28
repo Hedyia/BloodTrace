@@ -7,10 +7,15 @@
     <StackLayout VerticalOptions="CenterAndExpand"
                  HorizontalOptions="FillAndExpand">
         <Picker Title="Select Blood Group" 
-                ItemsSource="{Binding BloodGroup}" />
+                ItemsSource="{Binding Donators}"
+                ItemDisplayBinding="{Binding BloodGroup}"
+                SelectedItem="{Binding SelectedBloodGroup}"/>
         <Picker Title="Select Country"
-                ItemsSource="{Binding Countries}" />
-        <Button Text="Search" BackgroundColor="Peru" />
+                ItemsSource="{Binding Donators}"
+                ItemDisplayBinding="{Binding Country}"
+                SelectedItem="{Binding SelectedCountry}"/>
+        <Button Text="Search" BackgroundColor="Peru"
+                Command="{Binding SearchCommand}"/>
     </StackLayout>
   
 </ContentPage>
